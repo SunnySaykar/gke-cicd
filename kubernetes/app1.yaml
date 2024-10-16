@@ -17,6 +17,8 @@ spec:
           image: us-central1-docker.pkg.dev/prj-poc-001/gke-repo/quickstart-image
           ports:
             - containerPort: 8080
+  
+---
 
 apiVersion: v1
 kind: Service
