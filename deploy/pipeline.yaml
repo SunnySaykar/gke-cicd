@@ -1,7 +1,7 @@
 apiVersion: deploy.cloud.google.com/v1
 kind: DeliveryPipeline
 metadata:
-  name: sunny-pipeline
+  name: demo-btxmvxo
   labels:
     app: cicd
 description: cicd delivery pipeline
