@@ -1,7 +1,6 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'us-central1-docker.pkg.dev/primal-buttress-441617-g3/sunny-repo/quickstart-image', './app1' ]
-  args: ['build', '-t', 'us-central1-docker.pkg.dev/primal-buttress-441617-g3/sunny-repo-2/quickstart-image', './app1' ]
   id: 'Build Docker quickstart Image' 
 
   # images:
@@ -12,12 +11,15 @@ steps:
   id: 'Push Docker quickstart Image'
 
 - name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'us-central1-docker.pkg.dev/primal-buttress-441617-g3/sunny-repo-2/quickstart-image', './app1' ]
+  id: 'Build Docker quickstart Image2' 
+
+- name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'us-central1-docker.pkg.dev/primal-buttress-441617-g3/sunny-repo-2/quickstart-image' ]
   id: 'Push Docker quickstart Image2'
 
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'us-central1-docker.pkg.dev/primal-buttress-441617-g3/sunny-repo/flask-image', './app2' ]
-  args: ['build', '-t', 'us-central1-docker.pkg.dev/primal-buttress-441617-g3/sunny-repo-2/flask-image', './app2' ]
   id: 'Build Docker flask Image'
 
   # images:
@@ -26,6 +28,10 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'us-central1-docker.pkg.dev/primal-buttress-441617-g3/sunny-repo/flask-image' ]
   id: 'Push Docker flask Image'
+
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'us-central1-docker.pkg.dev/primal-buttress-441617-g3/sunny-repo-2/flask-image', './app2' ]
+  id: 'Build Docker flask Image2'
 
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'us-central1-docker.pkg.dev/primal-buttress-441617-g3/sunny-repo-2/flask-image' ]
